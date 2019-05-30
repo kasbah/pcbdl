@@ -22,6 +22,7 @@ from .small_parts import *
 from .defined_at import *
 from .context import *
 
+from .kicad import *
 from .allegro import *
 from .html import *
 

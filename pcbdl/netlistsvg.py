@@ -166,12 +166,16 @@ class SVGPart(object):
 					port_directions[name] = DIRECTIONS[pin_number % 2]
 
 			pin_net = pin._net
+			pin_net_helper = None
 			if pin_net:
 				if hasattr(pin_net, "parent"):
 					pin_net = pin_net.parent
 
-				pin_net_helper = self.schematic_page.net_helpers[pin_net]
-
+				try:
+					pin_net_helper = self.schematic_page.net_helpers[pin_net]
+				except KeyError:
+					pass
+			if pin_net_helper:
 				net_node_number = pin_net_helper.get_node_number(pin)
 				connections[name] = [net_node_number]
 
@@ -336,3 +340,5 @@ def generate_svg(pins_to_skip=[], *args, **kwargs):
 			return
 
 		yield svg_contents
+
+		break

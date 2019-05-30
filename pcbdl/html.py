@@ -51,8 +51,12 @@ class HTMLPart(Plugin):
 		l = l[:l.index(Part) + 1]
 		for cls in l:
 			if inspect.getsourcefile(cls) in self.code_manager.file_database:
-				_, line = inspect.getsourcelines(cls)
-				yield "<a href=\"#line-%d\">%s</a>" % (line, html.escape(repr(cls)))
+				try:
+					_, line = inspect.getsourcelines(cls)
+				except OSError:
+					yield "%s" % html.escape(repr(cls))
+				else:
+					yield "<a href=\"#line-%d\">%s</a>" % (line, html.escape(repr(cls)))
 			else:
 				yield "%s" % html.escape(repr(cls))
 
@@ -74,7 +78,7 @@ class HTMLPart(Plugin):
 			pass
 
 		if part.__doc__:
-			yield "<pre>%s</pre>" % textwrap.dedent(part.__doc__.rstrip())
+			yield "<pre>%s</pre>" % textwrap.dedent(html.escape(part.__doc__.rstrip()))
 
 		if hasattr(self, "netlistsvg"):
 			yield "<p><a href=\"#cell_%s\">See in SVG</a></p>" % self.netlistsvg.part_helpers[self.instance].cell_name
@@ -255,7 +259,7 @@ def html_generator(context=global_context, include_svg=False):
 	code_manager = Code()
 
 	if include_svg:
-		svg = NetlistSVG(context=context)
+		svg = NetlistSVG(context=context, airwires=1)
 		HTMLPart.netlistsvg = svg
 		HTMLNet.netlistsvg = svg
 
@@ -271,7 +275,10 @@ def html_generator(context=global_context, include_svg=False):
 		for cls in l:
 			file = inspect.getsourcefile(cls)
 			if file in code_manager.file_database:
-				_, line = inspect.getsourcelines(cls)
+				try:
+					_, line = inspect.getsourcelines(cls)
+				except OSError:
+					line = 0
 				code_manager.instanced_here(part, file, line)
 
 	yield "<!DOCTYPE html>"
