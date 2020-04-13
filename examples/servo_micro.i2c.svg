@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:s="https://github.com/nturley/netlistsvg" width="896" height="254">
+  <style>svg {
+    stroke: #000;
+    fill: none;
+  }
+  text {
+    fill: #000;
+    stroke: none;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+  }
+  .nodelabel {
+    text-anchor: middle;
+  }
+  .inputPortLabel {
+    text-anchor: end;
+  }
+  .outputPortLabel {
+  }
+  .insideInputPortLabel {
+    alignment-baseline: middle;
+  }
+  .insideOutputPortLabel {
+    text-anchor: end;
+    alignment-baseline: middle;
+  }
+  .splitjoinBody {
+    fill: #000;
+  }
+  .symbol {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-width: 2;
+  }
+  .detail {
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    fill: #000;
+  }</style>
+  <g s:type="generic" s:width="200" s:height="40" transform="translate(678,199)" id="cell_U6">
+    <text x="15" y="-20" class="nodelabel cell_U6" s:attribute="ref">U6</text>
+    <text class="nodelabel cell_U6" x="15" y="-5" s:attribute="value">STM32F072CBU6TR</text>
+    <rect width="30" height="40" x="0" y="0" s:generic="body" class="cell_U6"/>
+    <g transform="translate(30,10)" s:x="200" s:y="10" s:pid="out0" s:position="right" id="port_U6~SERVO_SCL" class="net_SERVO_SCL">
+      <text x="5" y="-4" class="outputPortLabel cell_U6">45</text>
+      <text x="-3" y="0" class="insideOutputPortLabel">SERVO_SCL</text>
+      <text x="30" y="0">SERVO_SCL</text>
+      <line x1="0" x2="84" y1="0" y2="0"/>
+    </g>
+    <g transform="translate(30,30)" s:x="200" s:y="10" s:pid="out0" s:position="right" id="port_U6~SERVO_SDA" class="net_SERVO_SDA">
+      <text x="5" y="-4" class="outputPortLabel cell_U6">46</text>
+      <text x="-3" y="0" class="insideOutputPortLabel">SERVO_SDA</text>
+      <text x="30" y="0">SERVO_SDA</text>
+      <line x1="0" x2="84" y1="0" y2="0"/>
+    </g>
+  </g>
+  <g s:type="vcc" s:width="20" s:height="30" transform="translate(58,22)" id="cell_power_symbol_78">
+    <s:alias val="vcc"/>
+    <text x="10" y="-4" class="nodelabel cell_power_symbol_78" s:attribute="name">PP3300</text>
+    <path d="M0,0 H20 L10,15 Z M10,15 V30" class="cell_power_symbol_78"/>
+    <g s:x="10" s:y="30" s:pid="A" s:position="bottom"/>
+  </g>
+  <g s:type="resistor_v" s:width="10" s:height="50" transform="translate(130,72)" id="cell_R501">
+    <s:alias val="r_v"/>
+    <text x="15" y="15" s:attribute="ref" class="cell_R501">R501</text>
+    <text x="15" y="30" s:attribute="value" class="cell_R501">4.7kΩ</text>
+    <path d="M0,10 V40 H10 V10 Z" class="symbol cell_R501"/>
+    <path d="M5,0 V10 M5,40 V50" class="connect cell_R501"/>
+    <g s:x="5" s:y="0" s:pid="A" s:position="top"/>
+    <g s:x="5" s:y="50" s:pid="B" s:position="bottom"/>
+  </g>
+  <g s:type="generic" s:width="200" s:height="40" transform="translate(242,199)" id="cell_U9">
+    <text x="15" y="-20" class="nodelabel cell_U9" s:attribute="ref">U9</text>
+    <text class="nodelabel cell_U9" x="15" y="-5" s:attribute="value">TCA6416ARTWR</text>
+    <rect width="30" height="40" x="0" y="0" s:generic="body" class="cell_U9"/>
+    <g transform="translate(0,10)" s:x="0" s:y="10" s:pid="in0" s:position="left" id="port_U9~SCL" class="net_SERVO_SCL">
+      <text x="-3" y="-4" class="inputPortLabel cell_U9">19</text>
+      <text x="5" y="0" class="insideInputPortLabel">SCL</text>
+      <text x="-74" y="0">SERVO_SCL</text>
+      <line x1="-84" x2="0" y1="0" y2="0"/>
+    </g>
+    <g transform="translate(0,30)" s:x="0" s:y="10" s:pid="in0" s:position="left" id="port_U9~SDA" class="net_SERVO_SDA">
+      <text x="-3" y="-4" class="inputPortLabel cell_U9">20</text>
+      <text x="5" y="0" class="insideInputPortLabel">SDA</text>
+      <text x="-74" y="0">SERVO_SDA</text>
+      <line x1="-84" x2="0" y1="0" y2="0"/>
+    </g>
+  </g>
+  <g s:type="generic" s:width="200" s:height="40" transform="translate(446,199)" id="cell_J3">
+    <text x="57" y="-20" class="nodelabel cell_J3" s:attribute="ref">J3</text>
+    <text class="nodelabel cell_J3" x="57" y="-5" s:attribute="value">AXK850145WG</text>
+    <rect width="114" height="20" x="0" y="0" s:generic="body" class="cell_J3"/>
+    <g transform="translate(0,10)" s:x="0" s:y="10" s:pid="in0" s:position="left" id="port_J3~I2C_SDA" class="net_SERVO_SDA">
+      <text x="-3" y="-4" class="inputPortLabel cell_J3">37</text>
+      <text x="5" y="0" class="insideInputPortLabel">I2C_SDA</text>
+      <text x="-74" y="0">SERVO_SDA</text>
+      <line x1="-84" x2="0" y1="0" y2="0"/>
+    </g>
+    <g transform="translate(114,10)" s:x="200" s:y="10" s:pid="out0" s:position="right" id="port_J3~I2C_SCL" class="net_SERVO_SCL">
+      <text x="5" y="-4" class="outputPortLabel cell_J3">38</text>
+      <text x="-3" y="0" class="insideOutputPortLabel">I2C_SCL</text>
+      <text x="30" y="0">SERVO_SCL</text>
+      <line x1="0" x2="84" y1="0" y2="0"/>
+    </g>
+  </g>
+  <g s:type="resistor_v" s:width="10" s:height="50" transform="translate(63,72)" id="cell_R502">
+    <s:alias val="r_v"/>
+    <text x="15" y="15" s:attribute="ref" class="cell_R502">R502</text>
+    <text x="15" y="30" s:attribute="value" class="cell_R502">4.7kΩ</text>
+    <path d="M0,10 V40 H10 V10 Z" class="symbol cell_R502"/>
+    <path d="M5,0 V10 M5,40 V50" class="connect cell_R502"/>
+    <g s:x="5" s:y="0" s:pid="A" s:position="top"/>
+    <g s:x="5" s:y="50" s:pid="B" s:position="bottom"/>
+  </g>
+  <line x1="68" x2="68" y1="52" y2="62" class="net_PP3300"/>
+  <line x1="68" x2="135" y1="62" y2="62" class="net_PP3300"/>
+  <circle cx="68" cy="62" r="2" style="fill:#000" class="net_PP3300"/>
+  <line x1="135" x2="135" y1="62" y2="72" class="net_PP3300"/>
+  <line x1="68" x2="68" y1="52" y2="72" class="net_PP3300"/>
+  <line x1="135" x2="135" y1="122" y2="142" class="net_SERVO_SCL"/>
+  <line x1="135" x2="816" y1="142" y2="142" class="net_SERVO_SCL"/>
+  <line x1="816" x2="816" y1="142" y2="209.5" class="net_SERVO_SCL"/>
+  <circle cx="135" cy="142" r="2" style="fill:#000" class="net_SERVO_SCL"/>
+  <line x1="816" x2="709" y1="209.5" y2="209.5" class="net_SERVO_SCL"/>
+  <line x1="135" x2="135" y1="122" y2="209.5" class="net_SERVO_SCL"/>
+  <line x1="135" x2="242" y1="209.5" y2="209.5" class="net_SERVO_SCL"/>
+  <line x1="135" x2="135" y1="122" y2="142" class="net_SERVO_SCL"/>
+  <line x1="135" x2="668" y1="142" y2="142" class="net_SERVO_SCL"/>
+  <line x1="668" x2="668" y1="142" y2="209.5" class="net_SERVO_SCL"/>
+  <circle cx="668" cy="142" r="2" style="fill:#000" class="net_SERVO_SCL"/>
+  <line x1="668" x2="561" y1="209.5" y2="209.5" class="net_SERVO_SCL"/>
+  <line x1="68" x2="68" y1="122" y2="132" class="net_SERVO_SDA"/>
+  <line x1="68" x2="883" y1="132" y2="132" class="net_SERVO_SDA"/>
+  <line x1="883" x2="883" y1="132" y2="229.5" class="net_SERVO_SDA"/>
+  <circle cx="68" cy="132" r="2" style="fill:#000" class="net_SERVO_SDA"/>
+  <line x1="883" x2="709" y1="229.5" y2="229.5" class="net_SERVO_SDA"/>
+  <line x1="68" x2="68" y1="122" y2="229.5" class="net_SERVO_SDA"/>
+  <line x1="68" x2="242" y1="229.5" y2="229.5" class="net_SERVO_SDA"/>
+  <line x1="68" x2="68" y1="122" y2="132" class="net_SERVO_SDA"/>
+  <line x1="68" x2="339" y1="132" y2="132" class="net_SERVO_SDA"/>
+  <line x1="339" x2="339" y1="132" y2="209.5" class="net_SERVO_SDA"/>
+  <circle cx="339" cy="132" r="2" style="fill:#000" class="net_SERVO_SDA"/>
+  <line x1="339" x2="446" y1="209.5" y2="209.5" class="net_SERVO_SDA"/>
+  <text x="760" y="152" class="net_SERVO_SCL">SERVO_SCL</text>
+  <text x="79" y="183.5" class="net_SERVO_SCL">SERVO_SCL</text>
+  <text x="612" y="152" class="net_SERVO_SCL">SERVO_SCL</text>
+  <text x="827" y="203.5" class="net_SERVO_SDA">SERVO_SDA</text>
+  <text x="12" y="203.5" class="net_SERVO_SDA">SERVO_SDA</text>
+  <text x="283" y="152" class="net_SERVO_SDA">SERVO_SDA</text>
+</svg>

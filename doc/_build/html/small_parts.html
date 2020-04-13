@@ -1,0 +1,416 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Small Parts &mdash; pcbdl  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Core Language" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pcbdl
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">PCB Design Language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Developing PCBDL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Core Language</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Small Parts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#jellybean">JellyBean</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-point">Test Point</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#predefined-parts">Predefined Parts</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pcbdl</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Small Parts</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/small_parts.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="small-parts">
+<h1>Small Parts<a class="headerlink" href="#small-parts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="jellybean">
+<h2>JellyBean<a class="headerlink" href="#jellybean" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pcbdl.small_parts.JellyBean">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">JellyBean</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>reversed=False</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#JellyBean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.JellyBean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.base.Part</span></code></p>
+<p>2 pin Jelly Bean components.</p>
+<p>The main attraction to subclass this is because of the to= argument, it’s very easy to chain connections
+with such a part because its pins are pretty flexible therefore easy tochoose automatically.</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.JellyBean.PINS">
+<code class="descname">PINS</code><em class="property"> = [('P1', '1'), ('P2', '2')]</em><a class="headerlink" href="#pcbdl.small_parts.JellyBean.PINS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.JellyBean.UNITS">
+<code class="descname">UNITS</code><em class="property"> = ''</em><a class="headerlink" href="#pcbdl.small_parts.JellyBean.UNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pcbdl.small_parts.JellyBean.get_pin_to_connect">
+<code class="descname">get_pin_to_connect</code><span class="sig-paren">(</span><em>pin_type</em>, <em>net=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#JellyBean.get_pin_to_connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.JellyBean.get_pin_to_connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="test-point">
+<h2>Test Point<a class="headerlink" href="#test-point" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pcbdl.small_parts.TP">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">TP</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#TP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.TP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pcbdl.small_parts.OnePinPart" title="pcbdl.small_parts.OnePinPart"><code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.small_parts.OnePinPart</span></code></a></p>
+<p>Test Point</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.TP.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'TP'</em><a class="headerlink" href="#pcbdl.small_parts.TP.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.TP.package">
+<code class="descname">package</code><em class="property"> = 'TP'</em><a class="headerlink" href="#pcbdl.small_parts.TP.package" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.TP.part_number">
+<code class="descname">part_number</code><em class="property"> = 'TP'</em><a class="headerlink" href="#pcbdl.small_parts.TP.part_number" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.OnePinPart">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">OnePinPart</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#OnePinPart"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.OnePinPart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.base.Part</span></code></p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.OnePinPart.PINS">
+<code class="descname">PINS</code><em class="property"> = [('PIN', 'P')]</em><a class="headerlink" href="#pcbdl.small_parts.OnePinPart.PINS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="pcbdl.small_parts.OnePinPart.get_pin_to_connect">
+<code class="descname">get_pin_to_connect</code><span class="sig-paren">(</span><em>pin_type</em>, <em>net=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#OnePinPart.get_pin_to_connect"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.OnePinPart.get_pin_to_connect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.OnePinPart.net">
+<code class="descname">net</code><a class="headerlink" href="#pcbdl.small_parts.OnePinPart.net" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="predefined-parts">
+<h2>Predefined Parts<a class="headerlink" href="#predefined-parts" title="Permalink to this headline">¶</a></h2>
+<p>Using the previous simple classes a ton of predefined parts are available:</p>
+<span class="target" id="module-pcbdl.small_parts"></span><dl class="class">
+<dt id="pcbdl.small_parts.BJT">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">BJT</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#BJT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.BJT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.base.Part</span></code></p>
+<p>BJT Transistor</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.BJT.PINS">
+<code class="descname">PINS</code><em class="property"> = [('B', 'BASE'), ('E', 'EMITTER'), ('C', 'COLLECTOR')]</em><a class="headerlink" href="#pcbdl.small_parts.BJT.PINS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.BJT.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'Q'</em><a class="headerlink" href="#pcbdl.small_parts.BJT.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.C">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">C</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>reversed=False</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#C"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pcbdl.small_parts.JellyBean" title="pcbdl.small_parts.JellyBean"><code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.small_parts.JellyBean</span></code></a></p>
+<p>Capacitor</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.C.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'C'</em><a class="headerlink" href="#pcbdl.small_parts.C.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.C.UNITS">
+<code class="descname">UNITS</code><em class="property"> = 'F'</em><a class="headerlink" href="#pcbdl.small_parts.C.UNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.C_POL">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">C_POL</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>reversed=False</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#C_POL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.C_POL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pcbdl.small_parts.C" title="pcbdl.small_parts.C"><code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.small_parts.C</span></code></a></p>
+<p>Polarized Capacitor</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.C_POL.PINS">
+<code class="descname">PINS</code><em class="property"> = [('+', 'P', 'PLUS', 'P2'), ('-', 'M', 'MINUS', 'P1')]</em><a class="headerlink" href="#pcbdl.small_parts.C_POL.PINS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.D">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">D</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>reversed=False</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#D"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.D" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pcbdl.small_parts.JellyBean" title="pcbdl.small_parts.JellyBean"><code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.small_parts.JellyBean</span></code></a></p>
+<p>Diode</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.D.PINS">
+<code class="descname">PINS</code><em class="property"> = [('A', 'ANODE', 'P1'), ('K', 'CATHODE', 'KATHODE', 'P2')]</em><a class="headerlink" href="#pcbdl.small_parts.D.PINS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.D.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'D'</em><a class="headerlink" href="#pcbdl.small_parts.D.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.FET">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">FET</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#FET"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.FET" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.base.Part</span></code></p>
+<p>FET Transistor</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.FET.PINS">
+<code class="descname">PINS</code><em class="property"> = [('G', 'GATE'), ('S', 'SOURCE'), ('D', 'DRAIN')]</em><a class="headerlink" href="#pcbdl.small_parts.FET.PINS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.FET.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'Q'</em><a class="headerlink" href="#pcbdl.small_parts.FET.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.L">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">L</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>reversed=False</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#L"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.L" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pcbdl.small_parts.JellyBean" title="pcbdl.small_parts.JellyBean"><code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.small_parts.JellyBean</span></code></a></p>
+<p>Inductor</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.L.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'L'</em><a class="headerlink" href="#pcbdl.small_parts.L.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.L.UNITS">
+<code class="descname">UNITS</code><em class="property"> = 'H'</em><a class="headerlink" href="#pcbdl.small_parts.L.UNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.LED">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">LED</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>reversed=False</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#LED"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.LED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pcbdl.small_parts.D" title="pcbdl.small_parts.D"><code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.small_parts.D</span></code></a></p>
+<p>Light Emitting Diode</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.LED.PINS">
+<code class="descname">PINS</code><em class="property"> = [('A', '+'), ('K', '-')]</em><a class="headerlink" href="#pcbdl.small_parts.LED.PINS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.LED.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'LED'</em><a class="headerlink" href="#pcbdl.small_parts.LED.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="pcbdl.small_parts.R">
+<em class="property">class </em><code class="descclassname">pcbdl.small_parts.</code><code class="descname">R</code><span class="sig-paren">(</span><em>value=None</em>, <em>refdes=None</em>, <em>package=None</em>, <em>part_number=None</em>, <em>populated=True</em>, <em>reversed=False</em>, <em>to=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pcbdl/small_parts.html#R"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pcbdl.small_parts.R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#pcbdl.small_parts.JellyBean" title="pcbdl.small_parts.JellyBean"><code class="xref py py-class docutils literal notranslate"><span class="pre">pcbdl.small_parts.JellyBean</span></code></a></p>
+<p>Resistor</p>
+<dl class="attribute">
+<dt id="pcbdl.small_parts.R.REFDES_PREFIX">
+<code class="descname">REFDES_PREFIX</code><em class="property"> = 'R'</em><a class="headerlink" href="#pcbdl.small_parts.R.REFDES_PREFIX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="pcbdl.small_parts.R.UNITS">
+<code class="descname">UNITS</code><em class="property"> = 'Ω'</em><a class="headerlink" href="#pcbdl.small_parts.R.UNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="api.html" class="btn btn-neutral float-left" title="Core Language" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Google
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
